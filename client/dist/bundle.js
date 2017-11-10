@@ -956,7 +956,11 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _Test = __webpack_require__(30);
 
-var _child = __webpack_require__(31);
+var _HelloTs = __webpack_require__(31);
+
+var _HelloTs2 = _interopRequireDefault(_HelloTs);
+
+var _child = __webpack_require__(32);
 
 var _child2 = _interopRequireDefault(_child);
 
@@ -997,7 +1001,8 @@ var Hello = function (_React$Component) {
         null,
         'Hello ',
         this.props.toWhat,
-        _react2.default.createElement(_child2.default, null)
+        _react2.default.createElement(_child2.default, null),
+        _react2.default.createElement(_HelloTs2.default, null)
       );
     }
   }]);
@@ -35429,6 +35434,41 @@ function printRemote(params) {
 
 /***/ }),
 /* 31 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+var HelloTs = /** @class */ (function (_super) {
+    __extends(HelloTs, _super);
+    function HelloTs() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    HelloTs.prototype.render = function () {
+        return [
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { key: "1" }, "HelleTs2"),
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { key: "2" }, "HelleTs2"),
+        ];
+    };
+    return HelloTs;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]));
+/* harmony default export */ __webpack_exports__["default"] = (HelloTs);
+
+
+/***/ }),
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

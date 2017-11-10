@@ -1,3 +1,14 @@
+# 第五课
+## 支持tsx
+
+```sh
+yarn global remove typings
+typings remove react react-dom
+yarn remove typings
+
+```
+***
+
 # 第四课
 ## 支持vsCode和typescript
 

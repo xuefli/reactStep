@@ -16,7 +16,7 @@ module.exports = {
         loader: "babel-loader",
       },
       {
-        test: /\.ts?$/,
+        test: /\.tsx?$/,
         include: [
           path.resolve(__dirname, "src")
         ],
@@ -25,6 +25,6 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts']
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   }
 };

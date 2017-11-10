@@ -2,6 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import ReactDom from 'react-dom';
 import { Remote, printRemote} from './Test';
+import HelloTs from './HelloTs';
 
 import Child from './child';
 
@@ -23,6 +24,7 @@ class Hello extends React.Component {
     <div>
       Hello {this.props.toWhat}
       <Child/>
+      <HelloTs/>
     </div>
     );
   }
