@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "global": "^4.3.2",
+    "jsx": "^0.9.89",
+    "lodash": "^4.17.4",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
+    "typings": "^2.1.1"
+  },
+  "name": "client",
+  "version": "1.0.0",
+  "description": "step by step learn react",
+  "main": "index.js",
+  "repository": "https://github.com/xuefli/reactStep.git",
+  "author": "lixf",
+  "license": "MIT",
+  "private": null,
+  "devDependencies": {
+    "webpack": "^3.8.1"
+  }
+}
