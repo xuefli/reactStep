@@ -935,43 +935,71 @@ module.exports = focusNode;
 
 /***/ }),
 /* 14 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_dom__);
 
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _lodash = __webpack_require__(15);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(21);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function component() {
   var element = document.createElement('div');
 
-  element.innerHTML = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.join(['Hello', 'webpack'], ' ');
+  element.innerHTML = _lodash2.default.join(['Hello', 'webpack'], ' ');
 
   return element;
 }
 
 document.body.appendChild(component());
 
-/*
-class Hello extends React.Component {
-  render() {
-    return <div>Hello {this.props.toWhat}</div>;
-  }
-}
-*/
+var Hello = function (_React$Component) {
+  _inherits(Hello, _React$Component);
 
-__WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render(
-  /*<Hello toWhat="the world"/>,*/
-  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('p', null, 'hello the world'),
-  document.getElementById("root")
-);
+  function Hello() {
+    _classCallCheck(this, Hello);
+
+    return _possibleConstructorReturn(this, (Hello.__proto__ || Object.getPrototypeOf(Hello)).apply(this, arguments));
+  }
+
+  _createClass(Hello, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        'Hello ',
+        this.props.toWhat
+      );
+    }
+  }]);
+
+  return Hello;
+}(_react2.default.Component);
+
+_reactDom2.default.render(_react2.default.createElement(Hello, { toWhat: 'the world' }),
+// React.createElement('p', null, 'hello the world'),
+// <div>hello the world by jsx</div>,
+document.getElementById("root"));
 
 /***/ }),
 /* 15 */

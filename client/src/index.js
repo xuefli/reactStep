@@ -12,16 +12,16 @@ function component() {
 
 document.body.appendChild(component());
 
-/*
 class Hello extends React.Component {
   render() {
     return <div>Hello {this.props.toWhat}</div>;
   }
 }
-*/
+
 
 ReactDom.render(
-  /*<Hello toWhat="the world"/>,*/
-  React.createElement('p', null, 'hello the world'),
+  <Hello toWhat="the world"/>,
+  // React.createElement('p', null, 'hello the world'),
+  // <div>hello the world by jsx</div>,
   document.getElementById("root")
 );

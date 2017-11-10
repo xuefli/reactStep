@@ -1,3 +1,22 @@
+
+# 第二课
+## 安装es6、jsx依赖包、开发依赖包
+```sh
+yarn add babel-loader
+yarn add --dev babel-register jsxobj babel-preset-es2015
+```
+
+## 使用es6特性和jsx特性
+```js
+class Hello extends React.Component {
+  render() {
+    return <div>Hello {this.props.toWhat}</div>;
+  }
+}
+
+```
+***
+
 # 第一课
 ## 安装环境nodejs、yarn、依赖包、开发依赖包
 ```sh
