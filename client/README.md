@@ -1,3 +1,17 @@
+# 第三课
+## 支持热更新
+
+```sh
+yarn add --dev webpack-dev-server
+```
+
+运行命令
+
+```sh
+yarn run start
+```
+
+***
 
 # 第二课
 ## 安装es6、jsx依赖包、开发依赖包
