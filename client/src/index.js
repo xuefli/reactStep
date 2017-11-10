@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import ReactDom from 'react-dom';
+import { Remote, printRemote} from './Test';
 
 import Child from './child';
 
@@ -11,6 +12,8 @@ function component() {
 
   return element;
 }
+
+printRemote({url: "http://test.com", param: {userName: 'test', passwd: 'test1'}});
 
 document.body.appendChild(component());
 

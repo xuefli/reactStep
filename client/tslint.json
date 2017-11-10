@@ -1,0 +1,10 @@
+{
+    "extends": "tslint:latest",
+    "cliOptions": {
+        "exclude": [
+            "bin",
+            "lib/*generated.js",
+            "**/*.json"
+        ]
+    }
+  }

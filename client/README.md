@@ -1,3 +1,19 @@
+# 第四课
+## 支持vsCode和typescript
+
+```sh
+yarn global add typings typescript
+yarn add --dev ts-loader
+
+```
+
+增加vs code 智能代码提醒
+```sh
+typings install react
+typings install react-dom
+```
+***
+
 # 第三课
 ## 支持热更新
 

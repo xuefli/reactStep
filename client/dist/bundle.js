@@ -954,7 +954,9 @@ var _reactDom = __webpack_require__(21);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _child = __webpack_require__(30);
+var _Test = __webpack_require__(30);
+
+var _child = __webpack_require__(31);
 
 var _child2 = _interopRequireDefault(_child);
 
@@ -973,6 +975,8 @@ function component() {
 
   return element;
 }
+
+(0, _Test.printRemote)({ url: "http://test.com", param: { userName: 'test', passwd: 'test1' } });
 
 document.body.appendChild(component());
 
@@ -35412,6 +35416,19 @@ module.exports = camelize;
 
 /***/ }),
 /* 30 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (immutable) */ __webpack_exports__["printRemote"] = printRemote;
+function printRemote(params) {
+    // tslint:disable-next-line:no-console
+    console.log("" + JSON.stringify(params));
+}
+
+
+/***/ }),
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35450,7 +35467,7 @@ var Child = function (_React$PureComponent) {
       return _react2.default.createElement(
         'p',
         null,
-        'this is jsx childComponent'
+        'this is jsx childComponent hot'
       );
     }
   }]);

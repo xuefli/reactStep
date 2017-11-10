@@ -14,10 +14,17 @@ module.exports = {
           path.resolve(__dirname, "src")
         ],
         loader: "babel-loader",
+      },
+      {
+        test: /\.ts?$/,
+        include: [
+          path.resolve(__dirname, "src")
+        ],
+        loader: "ts-loader",
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts']
   }
 };
