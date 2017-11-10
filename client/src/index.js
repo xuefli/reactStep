@@ -2,6 +2,8 @@ import _ from 'lodash';
 import React from 'react';
 import ReactDom from 'react-dom';
 
+import Child from './child';
+
 function component() {
   var element = document.createElement('div');
 
@@ -14,7 +16,12 @@ document.body.appendChild(component());
 
 class Hello extends React.Component {
   render() {
-    return <div>Hello {this.props.toWhat}</div>;
+    return (
+    <div>
+      Hello {this.props.toWhat}
+      <Child/>
+    </div>
+    );
   }
 }
 

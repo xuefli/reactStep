@@ -1,11 +1,8 @@
 {
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --display detailed"
   },
   "dependencies": {
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
     "global": "^4.3.2",
     "jsx": "^0.9.89",
     "lodash": "^4.17.4",
@@ -22,6 +19,9 @@
   "license": "MIT",
   "private": null,
   "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
     "jsxobj": "^1.1.0",
