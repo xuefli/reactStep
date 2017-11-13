@@ -24,6 +24,10 @@ class Hello extends React.Component {
   render() {
     return (
     <div>
+      <section>
+        <div><a href="/porlet1">porlet1</a></div>
+        <div><a href="/porlet2">porlet2</a></div>
+        </section>
       <img src='./log.svg'/>
       Hello {this.props.toWhat}
       <img src={Logo} style={{height: '30%', width: '30%'}}/>
