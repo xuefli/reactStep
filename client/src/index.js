@@ -5,6 +5,8 @@ import { Remote, printRemote} from './Test';
 import HelloTs from './HelloTs';
 
 import Child from './child';
+import './style.css';
+import Logo from './logo.svg';
 
 function component() {
   var element = document.createElement('div');
@@ -22,7 +24,9 @@ class Hello extends React.Component {
   render() {
     return (
     <div>
+      <img src='./log.svg'/>
       Hello {this.props.toWhat}
+      <img src={Logo} style={{height: '30%', width: '30%'}}/>
       <Child/>
       <HelloTs/>
     </div>

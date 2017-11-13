@@ -1,3 +1,12 @@
+# 第六课
+## 支持css、图片资源加载
+
+```sh
+yarn add --dev file-loader style-loader css-loader
+
+```
+***
+
 # 第五课
 ## 支持tsx
 

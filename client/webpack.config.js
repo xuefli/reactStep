@@ -9,7 +9,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.css$/,
+        use: ["style-loader", "css-loader",]
+      },
+      {
+        test: /\.(png|svg|jpg|gif|eot|ttf|woff)$/,
+        use: ['file-loader']
+      },
+      {
+        test: /(\.jsx|\.js)$/,
         include: [
           path.resolve(__dirname, "src")
         ],
@@ -26,5 +34,5 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
-  }
+  },
 };
