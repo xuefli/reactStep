@@ -1,3 +1,13 @@
+
+# 第六课
+## 支持多bundle输出
+
+```sh
+yarn add --dev html-webpack-plugin
+
+```
+***
+
 # 第六课
 ## 支持css、图片资源加载
 
