@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -19,7 +20,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader",]
+        use: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader"})
       },
       {
         test: /\.(png|svg|jpg|gif|eot|ttf|woff)$/,
@@ -46,6 +47,14 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
+    new ExtractTextPlugin({
+      filename:  (getPath) => {
+        console.log('show:' + JSON.stringify(getPath('[name].css')));
+        return getPath('[name].css');
+      },
+      allChunks: true
+    }
+    ),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
     }),

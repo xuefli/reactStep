@@ -1,3 +1,12 @@
+# 第九课
+## css样式不再写入html,而是生成css文件link
+## 遗留问题是会合并不同的css到同一个文件
+
+```sh
+yarn add --dev extract-text-webpack-plugin
+
+```
+***
 
 # 第八课
 ## 支持按照目录输出各个子目录的页面和js

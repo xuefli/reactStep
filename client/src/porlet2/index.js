@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Component1 from '../components/Component1'
+import '../style.css';
+import './style.css';
 
 class Porlet2 extends React.Component {
   render() {
