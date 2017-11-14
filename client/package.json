@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "build": "webpack --display detailed",
-    "start": "webpack-dev-server --content-base dist/"
+    "dev": "webpack --config webpack.config.dev.js --progress --colors",
+    "start": "webpack-dev-server --config webpack.config.dev.js --progress"
   },
   "dependencies": {
     "@types/react": "^16.0.22",

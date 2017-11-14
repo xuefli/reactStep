@@ -11,7 +11,7 @@ import Logo from './logo.svg';
 function component() {
   var element = document.createElement('div');
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  element.innerHTML = _.join(['Hello', 'webpack hot'], ' ');
 
   return element;
 }

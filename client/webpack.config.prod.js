@@ -1,8 +1,11 @@
+process.env.NODE_ENV = '"production"'
+
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+console.log('NODE_EVN:' + process.env.NODE_ENV);
 
 module.exports = {
   entry: {
@@ -14,13 +17,25 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader"})
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader", 
+          use: [
+            {
+              loader: 'css-loader', 
+              options: {
+                minimize: true
+              }
+            }
+          ]
+        })
       },
       {
         test: /\.(png|svg|jpg|gif|eot|ttf|woff)$/,
@@ -47,16 +62,15 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new ExtractTextPlugin({
-      filename:  (getPath) => {
-        console.log('show:' + JSON.stringify(getPath('[name].css')));
-        return getPath('[name].css');
-      },
-      allChunks: true
-    }
-    ),
+    new webpack.BannerPlugin('版权所有，翻版必究'),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: process.env.NODE_ENV,
+      }
+    }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
+      name: 'vendor',
+      minChunks: Infinity,
     }),
     new HtmlWebpackPlugin({
       chunks: ['components', 'vendor', 'index'],
@@ -78,6 +92,15 @@ module.exports = {
       title: 'multi thunk',
       filename: 'porlet2/index.html',
       inject: true
-    })
+    }),
+    new webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin({
+      filename:  (getPath) => {
+        console.log('show:' + JSON.stringify(getPath('[name].css')));
+        return getPath('[name].css');
+      },
+      allChunks: true
+    }
+    ),
   ]
 };
