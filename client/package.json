@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "webpack --config webpack.config.dev.js --progress --colors",
+    "build": "webpack --config webpack.config.prod.js --progress --colors",
     "start": "webpack-dev-server --config webpack.config.dev.js --progress"
   },
   "dependencies": {
@@ -28,6 +28,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "clean-webpack-plugin": "^0.1.17",
+    "copy-webpack-plugin": "^4.2.0",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",

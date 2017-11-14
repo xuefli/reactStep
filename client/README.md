@@ -1,3 +1,12 @@
+# 第十一课
+## 解决html中静态图片引用，不显示的问题
+
+```sh
+yarn add --dev copy-webpack-plugin
+
+```
+***
+
 # 第十课
 ## 分离development和production的webpack配置
 

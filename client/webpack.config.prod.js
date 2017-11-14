@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 console.log('NODE_EVN:' + process.env.NODE_ENV);
 
 module.exports = {
@@ -39,7 +40,17 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif|eot|ttf|woff)$/,
-        use: ['file-loader']
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              useRelativePath: true,
+              outputPath: 'images/',
+              // publicPath: 'images/'
+            },
+          }
+        ]
       },
       {
         test: /(\.jsx|\.js)$/,
@@ -102,5 +113,10 @@ module.exports = {
       allChunks: true
     }
     ),
+    new CopyWebpackPlugin([
+      {
+        from: './src/images', to:'./images'
+      }
+    ]),
   ]
 };

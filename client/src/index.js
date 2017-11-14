@@ -6,7 +6,7 @@ import HelloTs from './HelloTs';
 
 import Child from './child';
 import './style.css';
-import Logo from './logo.svg';
+import Logo from './images/logo.svg';
 
 function component() {
   var element = document.createElement('div');
@@ -28,7 +28,7 @@ class Hello extends React.Component {
         <div><a href="/porlet1">porlet1</a></div>
         <div><a href="/porlet2">porlet2</a></div>
         </section>
-      <img src='./log.svg'/>
+      <img src='./images/logo.svg'/>
       Hello {this.props.toWhat}
       <img src={Logo} style={{height: '30%', width: '30%'}}/>
       <Child/>
