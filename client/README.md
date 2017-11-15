@@ -1,3 +1,13 @@
+
+# 第十二课
+## 优化编译速度，优化production的输出物的尺寸
+
+```sh
+yarn add --dev babel-plugin-transform-runtime
+
+```
+***
+
 # 第十一课
 ## 解决html中静态图片引用，不显示的问题
 

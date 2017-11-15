@@ -21,7 +21,7 @@ module.exports = {
   },
   devtool: 'source-map',
   devServer: {
-    contentBase: './dist/',
+    contentBase: './dist',
     historyApiFallback: true,
     inline: true,
     hot: true
@@ -31,8 +31,15 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          {loader: 'style-loader'},
-          {loader: 'css-loader'}, 
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader', 
+            options: {
+              modules: true
+            }
+          }, 
         ]
       },
       {
@@ -44,6 +51,7 @@ module.exports = {
         include: [
           path.resolve(__dirname, "src")
         ],
+        exclude: /(node_modules|bower_components)/,
         loader: "babel-loader",
       },
       {
@@ -65,6 +73,10 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: Infinity,
     }),
     new HtmlWebpackPlugin({
       chunks: ['components', 'vendor', 'index'],

@@ -32,7 +32,8 @@ module.exports = {
             {
               loader: 'css-loader', 
               options: {
-                minimize: true
+                minimize: true,
+                modules: true
               }
             }
           ]
@@ -57,6 +58,7 @@ module.exports = {
         include: [
           path.resolve(__dirname, "src")
         ],
+        exclude: /(node_modules|bower_components)/,
         loader: "babel-loader",
       },
       {
@@ -104,7 +106,15 @@ module.exports = {
       filename: 'porlet2/index.html',
       inject: true
     }),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false,
+          drop_console: true,
+          drop_debugger: true,
+        },        
+        comments: false,
+      }
+    ),
     new ExtractTextPlugin({
       filename:  (getPath) => {
         console.log('show:' + JSON.stringify(getPath('[name].css')));

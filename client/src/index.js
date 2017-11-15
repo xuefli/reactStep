@@ -5,7 +5,7 @@ import { Remote, printRemote} from './Test';
 import HelloTs from './HelloTs';
 
 import Child from './child';
-import './style.css';
+import styles from './style.css';
 import Logo from './images/logo.svg';
 
 function component() {
