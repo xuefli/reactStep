@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import Component1 from '../components/Component1'
 import '../style.css';
 import './style.css';
+import { Porlet1 } from './Porlet1';
 
 class Porlet2 extends React.Component {
   render() {
@@ -10,6 +11,7 @@ class Porlet2 extends React.Component {
     <div>
       <p>porlet2</p>
       <Component1/>
+      <Porlet1/>
     </div>
   );
   }
