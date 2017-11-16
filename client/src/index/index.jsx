@@ -5,8 +5,8 @@ import { Remote, printRemote} from './Test';
 import HelloTs from './HelloTs';
 
 import Child from './child';
-import styles from './style.css';
-import Logo from './images/logo.svg';
+import styles from '@/assets/css/style.css';
+import Logo from '../images/logo.svg';
 
 function component() {
   var element = document.createElement('div');
@@ -28,8 +28,9 @@ class Hello extends React.Component {
         <div><a href="/porlet1">porlet1</a></div>
         <div><a href="/porlet2">porlet2</a></div>
         </section>
-      <img src='./images/logo.svg'/>
-      Hello {this.props.toWhat}
+        Hello {this.props.toWhat}
+      <br/>
+      <img src='/images/logo.svg'  style={{height: '30%', width: '30%', backgroundColor: 'black'}}/>
       <img src={Logo} style={{height: '30%', width: '30%'}}/>
       <Child/>
       <HelloTs/>

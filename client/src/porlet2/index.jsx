@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Component1 from '../components/Component1'
-import '../style.css';
+import '@/assets/css/style.css';
 import './style.css';
 import { Porlet1 } from './Porlet1';
 

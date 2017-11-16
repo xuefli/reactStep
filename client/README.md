@@ -1,4 +1,16 @@
 
+# 第十四课
+## 对于webpack.config.*.js统一放在config目
+## 解决components.js的代码在porlet*.js中重复，增加另外一个CommonsChunkPlugin解决
+## 调整公用的css到assets/css目录
+## 调整首页到index目录
+
+```
+对于components目录，需要在里面增加index.js，import才行。对于src目录中未用到的，代码编译后是不会带入的
+```
+
+***
+
 # 第十三课
 ## 验证多级目录的处理，如果entry没有指定，那么entry下的子目录会合并到entry的js里面
 
