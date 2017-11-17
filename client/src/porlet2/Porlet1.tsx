@@ -1,20 +1,17 @@
 import * as React from "react";
 
-// import { Loadable } from "react-loadable";
-import { Porlet21 } from "./porlet21/Porlet21";
+// import { Porlet21 } from "./porlet21/Porlet21";
+import asyncComponent from "../components/AsyncComponent";
 
-// const LoadableComponent = Loadable({
-//     loader: () => import('./porlet21/Porlet21'),
-//     loading: undefined,
-//   });
+const LoadableComponent = asyncComponent(() => import("./porlet21/Porlet21"));
 
 export class Porlet1 extends React.Component<{}, {}> {
    public render() {
         return [
             <div key={1}> component for porlet1</div>,
             <div key={2}> component for porlet1</div>,
-            <Porlet21 key={3}/>,
-            // <LoadableComponent/>,
+            // <Porlet21 key={3}/>,
+            <LoadableComponent key={3}/>,
         ];
     }
 }

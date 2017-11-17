@@ -5,7 +5,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 console.log(`process.env.NODE_ENV: + ${process.env.NODE_ENV}`);
 
 function resolve (dir) {
@@ -16,7 +17,7 @@ module.exports = {
   entry: {
     index: [resolve('src/index')],
     vendor: ['react', 'react-dom','redux', 'lodash'],
-    components: [resolve('src/components/Component1.tsx')],
+    components: [resolve('src/components')],
     'porlet1/porlet1': [resolve('src/porlet1')],
     'porlet2/porlet2': [resolve('src/porlet2')],
   },

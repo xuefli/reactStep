@@ -5,7 +5,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 console.log(`process.env.NODE_ENV: + ${process.env.NODE_ENV}`);
 
 function resolve (dir) {
@@ -119,15 +120,30 @@ module.exports = {
       inject: true
     }),
     // 压缩css和js
-    new webpack.optimize.UglifyJsPlugin({
+    new UglifyJSPlugin({
+      uglifyOptions: {
+        output: {
+          comments: false,
+          beautify: false,
+        },
         compress: {
           warnings: false,
+          comparisons: false,
+          drop_console: true,
+          drop_debugger: true,
+        },        
+      }
+    }),
+/*     new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false,
+          comparisons: false,
           drop_console: true,
           drop_debugger: true,
         },        
         comments: false,
       }
-    ),
+    ), */
     new ExtractTextPlugin({
       filename:  (getPath) => {
         console.log('show:' + JSON.stringify(getPath('[name].css')));

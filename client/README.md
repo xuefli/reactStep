@@ -1,4 +1,13 @@
 
+# 第十五课
+## 引入dynamic import
+## 使用 extract-text-webpack-plugin 代替 webpack.optimize.UglifyJsPlugin，解决dynamic import uglify时编译问题
+
+```sh
+extract-text-webpack-plugin
+```
+***
+
 # 第十四课
 ## 对于webpack.config.*.js统一放在config目
 ## 解决components.js的代码在porlet*.js中重复，增加另外一个CommonsChunkPlugin解决
